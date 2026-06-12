@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class VideoGames extends StartingForAll{
     private String platform;
-    private Duration duration;
+    private final Duration duration;
     private Generes generes;
 
     public VideoGames(String title, LocalDate yearOfRelease, double price, int duration, Generes generes, String platform) {
@@ -48,11 +48,6 @@ public class VideoGames extends StartingForAll{
     public String getPlatform() {
         return platform;
     }
-
-    public void setDuration(Duration duration) {
-        this.duration = duration;
-    }
-
     public void setPlatform(String platform) {
         this.platform = platform;
     }

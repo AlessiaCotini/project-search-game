@@ -6,7 +6,7 @@ public abstract class StartingForAll {
     private final Long idGame ;
     private static long counter = 1;
     private String title ;
-    private final LocalDate yearOfRelease;
+    private LocalDate yearOfRelease;
     private double price;
 
     public StartingForAll(String title, LocalDate yearOfRelease, double price) {
@@ -31,6 +31,11 @@ public abstract class StartingForAll {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public void setYearOfRelease(LocalDate yearOfRelease) {
+        this.yearOfRelease = yearOfRelease;
+    }
+
     public String getTitle() {
         return title;
     }
