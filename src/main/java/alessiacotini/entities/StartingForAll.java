@@ -1,22 +1,19 @@
 package alessiacotini.entities;
 
-
 import java.time.LocalDate;
-import java.util.Random;
 
 public abstract class StartingForAll {
-    Random random = new Random();
-
     private final Long idGame ;
+    private static long counter = 1;
     private String title ;
     private final LocalDate yearOfRelease;
     private double price;
 
-    public StartingForAll(Long idGame, String title, LocalDate yearOfRelease, double price, String title1) {
-        this.idGame = random.nextLong();
+    public StartingForAll(String title, LocalDate yearOfRelease, double price) {
+        this.idGame = counter++;
         this.title = title;
         this.yearOfRelease = yearOfRelease;
-        this.price = price;
+        setPrice(price);
     }
     public void setPrice(double price) {
         if (price < 0) {
@@ -31,7 +28,7 @@ public abstract class StartingForAll {
         return title;
     }
     public Long getIdGame() {
-        return idGame;
+         return idGame;
     }
     public double getPrice() {
         return price;
