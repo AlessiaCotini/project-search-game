@@ -10,6 +10,12 @@ public abstract class StartingForAll {
     private double price;
 
     public StartingForAll(String title, LocalDate yearOfRelease, double price) {
+        if (yearOfRelease == null) {
+            throw new IllegalArgumentException("Is not true, we know.");
+        }
+        if (yearOfRelease.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("Maybe someday" + yearOfRelease);
+        }
         this.idGame = counter++;
         this.title = title;
         this.yearOfRelease = yearOfRelease;
@@ -36,5 +42,12 @@ public abstract class StartingForAll {
     }
     public LocalDate getYearOfRelease() {
         return yearOfRelease;
+    }
+
+    @Override
+    public String toString() {
+        return  " Titolo :'" + title + '\'' +
+                ", anno di uscita : " + yearOfRelease +
+                ", prezzo : " + price + "$ "+ "ID gioco : " + idGame;
     }
 }
