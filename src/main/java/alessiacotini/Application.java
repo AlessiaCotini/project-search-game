@@ -40,16 +40,19 @@ public class Application {
         System.out.println(laMiaCollezione);
 
         boolean inputContinuo = true;
+        System.out.println("--------------------------------- INSERISCI UN NUMERO CHE CORRISPONDA A UNA DI QUESTE AZIONI -----------------------------------------------------------");
+        System.out.println("--------------------------------- 1. RICERCA TRAMITE CODICE ID ---------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------- 2. RICERCA TRAMITE PREZZO -------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------- 3. RICERCA TRAMITE NUMERO DI GIOCATORI -----------------------------------------------------------------------------------");
+        System.out.println("--------------------------------- 4. RIMUOVI TRAMITE CODICE ID ----------------------------------------------------------------------------------");
+        System.out.println("--------------------------------- 5. AGGIORNA TRAMITE CODICE ID ---------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------- 6. STAMPA LE STATISTICHE DELLA TUA COLLEZIONE ------------------------------------------------------------------");
+        System.out.println("********************************* 0. PER USCIRE ************************************************************************************************************");
+
+
         while (inputContinuo) {
             try {
-                System.out.println("--------------------------------- INSERISCI UN NUMERO CHE CORRISPONDA A UNA DI QUESTE AZIONI --------------------------------");
-                System.out.println("--------------------------------- 1. RICERCA TRAMITE CODICE ID ---------------------------------");
-                System.out.println("--------------------------------- 2. RICERCA TRAMITE PREZZO ---------------------------------");
-                System.out.println("--------------------------------- 3. RICERCA TRAMITE NUMERO DI GIOCATORI ---------------------------------");
-                System.out.println("--------------------------------- 4. RIMUOVI TRAMITE CODICE ID ---------------------------------");
-                System.out.println("--------------------------------- 5. AGGIORNA TRAMITE CODICE ID ---------------------------------");
-                System.out.println("--------------------------------- 6. STAMPA LE STATISTICHE DELLA TUA COLLEZIONE ---------------------------------");
-                System.out.println("********************************* 0. PER USCIRE ************************************************");
+                System.out.println("***************************************************     CHE VUOI FARE?     ******************************************************");
 
                 int input = scanner.nextInt();
                 scanner.nextLine();
@@ -108,7 +111,7 @@ public class Application {
                         System.out.println("Arrivederci Giangiorgio!");
                         inputContinuo = false;
                     }
-                    default -> System.out.println("Opzione non valida. Scegli un numero da 0 a 6.");
+                    default -> System.out.println("SCEGLI UN NUMERO DA UNO A SEI, ZERO PER TERMINARE!");
                 }
 
             } catch (java.util.InputMismatchException e) {
