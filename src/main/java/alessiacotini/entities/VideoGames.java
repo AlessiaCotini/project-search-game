@@ -1,33 +1,36 @@
 package alessiacotini.entities;
 
 import alessiacotini.entities.forgeneres.Generes;
+
+import java.time.Duration;
 import java.time.LocalDate;
 
 public class VideoGames extends StartingForAll{
     private String platform;
-    private Integer duration;
-    private final Generes generes;
+    private Duration duration;
+    private Generes generes;
 
-    public VideoGames(Long idGame, String title, LocalDate yearOfRelease, double price, String title1, String platform, Integer duration, Generes generes ) {
-        super(idGame, title, yearOfRelease, price, title1);
+    public VideoGames(String title, LocalDate yearOfRelease, double price) {
+        super(title, yearOfRelease, price);
         this.platform = platform;
-        this.duration = duration;
+        this.duration = Duration.ofHours(getDuration());
         this.generes= generes;
     }
+
 
     public Generes getGeneres() {
         return generes;
     }
 
     public Integer getDuration() {
-        return duration;
+        return Math.toIntExact(duration.toHours());
     }
 
     public String getPlatform() {
         return platform;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Duration duration) {
         this.duration = duration;
     }
 

@@ -15,6 +15,7 @@ public abstract class StartingForAll {
         this.yearOfRelease = yearOfRelease;
         setPrice(price);
     }
+
     public void setPrice(double price) {
         if (price < 0) {
             throw new IllegalArgumentException("Not in my business : " + price);
